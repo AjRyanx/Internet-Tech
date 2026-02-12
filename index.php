@@ -24,11 +24,9 @@ $avg_courses = $total_members > 0 ? number_format($total_course_count / $total_m
     <p class="text-muted">Overview of all group members and their registered courses</p>
 </div>
 
-<!-- Member Cards Grid -->
 <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 1.5rem;">
     <?php foreach ($members as $member): ?>
         <div class="bg-card border rounded-lg p-6 shadow-sm hover:shadow-md transition-all">
-            <!-- Member Header -->
             <div class="mb-4 pb-4 border-bottom" style="border-bottom: 1px solid var(--border);">
                 <div class="flex items-start justify-between">
                     <div>
@@ -43,7 +41,6 @@ $avg_courses = $total_members > 0 ? number_format($total_course_count / $total_m
                 </div>
             </div>
 
-            <!-- Registered Courses -->
             <div>
                 <h4 class="text-sm font-medium mb-3">Registered Courses</h4>
                 <div style="display: flex; flex-direction: column; gap: 0.5rem;">
@@ -69,7 +66,6 @@ $avg_courses = $total_members > 0 ? number_format($total_course_count / $total_m
     <?php endforeach; ?>
 </div>
 
-<!-- Summary Stats -->
 <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 2rem;">
     <div class="bg-primary text-primary-foreground rounded-lg p-6">
         <p style="opacity: 0.8; margin-bottom: 0.25rem;">Total Members</p>
