@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Group Project Portal</title>
+    <title>Group 11 Portal</title>
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,7 +20,7 @@
         <nav>
             <a href="index.php" class="logo">
                 <i data-lucide="layout-grid" class="text-accent" style="width: 24px; height: 24px;"></i>
-                Group 5 Portal
+                Group 11 Portal
             </a>
             <div class="nav-links">
                 <a href="index.php" class="<?php echo basename($_SERVER['PHP_SELF']) == 'index.php' ? 'active' : ''; ?>">Dashboard</a>

@@ -21,32 +21,30 @@ $avg_courses = $total_members > 0 ? number_format($total_course_count / $total_m
         <i data-lucide="users" class="text-accent" style="width: 32px; height: 32px;"></i>
         <h1 style="font-size: 2rem; font-weight: 500;">Group Portal Dashboard</h1>
     </div>
-    <p class="text-muted">Overview of all group members and their registered courses</p>
+    <p class="text-muted">All group members and their registered courses</p>
 </div>
 
 <!-- Member Cards Grid -->
-<div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 1.5rem;">
+<div class="grid" style="grid-template-columns: repeat(3, minmax(400px, 1fr)); gap: 1.5rem;">
     <?php foreach ($members as $member): ?>
         <div class="bg-card border rounded-lg p-6 shadow-sm hover:shadow-md transition-all">
             <!-- Member Header -->
             <div class="mb-4 pb-4 border-bottom" style="border-bottom: 1px solid var(--border);">
                 <div class="flex items-start justify-between">
                     <div>
-                        <p class="text-muted text-sm">
+                        <p class="">
                             Matric No: <span class="text-accent font-medium"><?php echo htmlspecialchars($member['matric_no']); ?></span>
                         </p>
-                        <h3 class="font-medium mb-1"><?php echo htmlspecialchars($member['name']); ?></h3>
+                        <h3 class=" mb-1">Name: <?php echo htmlspecialchars($member['name']); ?></h3>
                     </div>
-                    <!-- <div style="background-color: rgba(16, 185, 129, 0.1); color: var(--accent); padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.875rem;">
-                        <?php echo count($member['courses']); ?> Courses
-                    </div> -->
+           
                 </div>
             </div>
 
             <!-- Registered Courses -->
             <div>
-                <h4 class="text-sm font-medium mb-3">Registered Courses</h4>
-                <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                <h4 class="text-sm font-medium mb-4">Registered Courses: <?php echo count($member['courses']); ?> </h4>
+                <div style="display: flex; flex-direction: column; gap: 1.5rem;">
                     <?php foreach ($member['courses'] as $course): ?>
                         <div class="bg-muted rounded-lg p-3 flex items-start gap-3">
                             <div class="bg-primary text-primary-foreground px-2 py-1 rounded text-sm font-medium" style="min-width: 80px; text-align: center;">

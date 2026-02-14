@@ -12,10 +12,10 @@ include 'includes/header.php';
 
 <div class="grid" style="grid-template-columns: 2fr 1fr; gap: 2rem; align-items: start;">
     <!-- Course Input Form -->
-    <div class="bg-card border rounded-lg shadow-sm p-6">
+    <div class="bg-card border rounded-lg shadow-sm p-6 ">
         <div class="flex items-center justify-between mb-6">
             <h3 class="font-medium">Course Details</h3>
-            <button type="button" onclick="addCourseRow()" class="btn btn-accent" style="font-size: 0.85rem;">
+            <button type="button" onclick="addCourseRow()" class="btn btn-accent mb-4" style="font-size: 0.85rem;">
                 <i data-lucide="plus" style="width: 16px;"></i> Add Course
             </button>
         </div>
@@ -23,13 +23,13 @@ include 'includes/header.php';
         <form action="gpa.php" method="POST" id="gpa-form">
             <!-- Table Header -->
             <div class="grid gap-4 mb-4 px-4 py-2 bg-muted rounded-lg text-sm font-medium hidden-mobile" style="grid-template-columns: 3fr 1fr 2fr auto;">
-                <div>Course Name (Optional)</div>
-                <div>Units</div>
-                <div>Grade</div>
+                <div>Course Name</div>
+                <div>Credit Units</div>
+                <div>Final Grade</div>
                 <div></div>
             </div>
 
-            <div id="course-rows" style="display: flex; flex-direction: column; gap: 1rem;">
+            <div id="course-rows" style="display: flex; flex-direction: column; gap: 1rem;" class="mb-4">
                 <!-- Initial Rows -->
                 <?php 
                 $num_rows = isset($_POST['units']) ? count($_POST['units']) : 5;
@@ -38,7 +38,7 @@ include 'includes/header.php';
                     $curr_unit = isset($_POST['units'][$i]) ? $_POST['units'][$i] : '';
                     $curr_grade = isset($_POST['grades'][$i]) ? $_POST['grades'][$i] : '';
                 ?>
-                <div class="course-row grid gap-4 p-4 bg-surface border rounded-lg items-center" style="grid-template-columns: 3fr 1fr 2fr auto;">
+                <div class="course-row mb-4 grid gap-4 p-4 bg-surface border rounded-lg items-center" style="grid-template-columns: 3fr 1fr 2fr auto;">
                     <div>
                          <input type="text" name="names[]" value="<?php echo htmlspecialchars($curr_name); ?>" class="form-control" placeholder="Course Code">
                     </div>
@@ -66,7 +66,7 @@ include 'includes/header.php';
             </div>
             
             <input type="hidden" name="calculate_gpa" value="1">
-            <button type="submit" class="btn btn-primary mt-6">Calculate Result</button>
+            <button type="submit" class="btn btn-primary mt-10">Calculate Result</button>
         </form>
     </div>
 
@@ -105,21 +105,21 @@ include 'includes/header.php';
         elseif ($gpa >= 1.5) $grade_class = 'Third Class';
         ?>
 
-        <div class="mb-6 p-6 rounded-lg text-center" style="background: linear-gradient(135deg, var(--accent), #34d399); color: white;">
+        <div class="mb-6 p-6 rounded-lg text-center " style="background: linear-gradient(135deg, var(--accent), #34d399); color: white; margin-top: 4px;">
             <p style="opacity: 0.9; margin-bottom: 0.5rem;">Your GPA</p>
             <p style="font-size: 3.5rem; font-weight: 700; line-height: 1; margin-bottom: 0.5rem;"><?php echo number_format($gpa, 2); ?></p>
-            <div style="background-color: rgba(255,255,255,0.2); display: inline-block; padding: 0.25rem 0.75rem; rounded: 9999px; font-size: 0.875rem;">
+            <div style="background-color: rgba(255,255,255,0.2); display: inline-block; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.875rem;">
                 <?php echo $grade_class; ?>
             </div>
         </div>
 
-        <div style="display: flex; flex-direction: column; gap: 0.75rem;">
-            <div class="bg-muted p-3 rounded-lg flex justify-between">
+        <div style="display: flex; flex-direction: column; gap: 0.75rem; margin-top: 10px;">
+            <div class="bg-muted p-5 flex justify-between rounded-lg" style="padding: 3px;">
                 <span class="text-muted text-sm">Total Units</span>
                 <span class="font-medium"><?php echo $total_units; ?></span>
             </div>
-            <div class="bg-muted p-3 rounded-lg flex justify-between">
-                <span class="text-muted text-sm">Quality Points</span>
+            <div class="bg-muted p-5  flex justify-between rounded-lg" style="padding: 5px;">
+                <span class="text-muted text-sm">Points</span>
                 <span class="font-medium"><?php echo $quality_points; ?></span>
             </div>
         </div>
