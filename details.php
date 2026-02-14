@@ -45,7 +45,7 @@ $colors = ['#10b981', '#6366f1', '#f59e0b', '#ec4899', '#8b5cf6', '#14b8a6'];
 
             <!-- Stats -->
             <div style="display: flex; flex-direction: column; gap: 1rem; margin-bottom: 1.5rem;">
-                <div class="bg-muted p-3 rounded-lg flex items-center gap-3">
+                <div class="bg-muted p-3 rounded-lg flex items-center gap-4">
                     <div style="width: 2.5rem; height: 2.5rem; background: rgba(239, 68, 68, 0.1); border-radius: 0.5rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
                         <i data-lucide="droplet" class="text-destructive" style="width: 1.25rem;"></i>
                     </div>
@@ -55,7 +55,7 @@ $colors = ['#10b981', '#6366f1', '#f59e0b', '#ec4899', '#8b5cf6', '#14b8a6'];
                     </div>
                 </div>
 
-                <div class="bg-muted p-3 rounded-lg flex items-center gap-3">
+                <div class="bg-muted p-3 rounded-lg flex items-center gap-4">
                     <div style="width: 2.5rem; height: 2.5rem; background: rgba(16, 185, 129, 0.1); border-radius: 0.5rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
                         <i data-lucide="map-pin" class="text-accent" style="width: 1.25rem;"></i>
                     </div>
@@ -65,7 +65,7 @@ $colors = ['#10b981', '#6366f1', '#f59e0b', '#ec4899', '#8b5cf6', '#14b8a6'];
                     </div>
                 </div>
 
-                <div class="bg-muted p-3 rounded-lg flex items-center gap-3">
+                <div class="bg-muted p-3 rounded-lg flex items-center gap-4">
                     <div style="width: 2.5rem; height: 2.5rem; background: rgba(15, 23, 42, 0.1); border-radius: 0.5rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
                         <i data-lucide="phone" class="text-primary" style="width: 1.25rem;"></i>
                     </div>

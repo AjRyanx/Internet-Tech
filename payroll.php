@@ -3,20 +3,20 @@ include 'includes/header.php';
 
 // Mock Employees Data (Reduced set for display)
 // Mock Employees Data 
-$employees = [
-    ['id' => 1, 'name' => 'John Anderson', 'position' => 'Senior Developer', 'dept' => 'Engineering'],
-    ['id' => 2, 'name' => 'Sarah Williams', 'position' => 'Product Manager', 'dept' => 'Product'],
-    ['id' => 3, 'name' => 'Michael Chen', 'position' => 'UI/UX Designer', 'dept' => 'Design'],
-    ['id' => 4, 'name' => 'Emily Johnson', 'position' => 'HR Manager', 'dept' => 'Human Resources'],
-    ['id' => 5, 'name' => 'David Martinez', 'position' => 'DevOps Engineer', 'dept' => 'Engineering'],
-    ['id' => 6, 'name' => 'Jennifer Lee', 'position' => 'Marketing Lead', 'dept' => 'Marketing'],
-];
+// $employees = [
+//     ['id' => 1, 'name' => 'John Anderson', 'position' => 'Senior Developer', 'dept' => 'Engineering'],
+//     ['id' => 2, 'name' => 'Sarah Williams', 'position' => 'Product Manager', 'dept' => 'Product'],
+//     ['id' => 3, 'name' => 'Michael Chen', 'position' => 'UI/UX Designer', 'dept' => 'Design'],
+//     ['id' => 4, 'name' => 'Emily Johnson', 'position' => 'HR Manager', 'dept' => 'Human Resources'],
+//     ['id' => 5, 'name' => 'David Martinez', 'position' => 'DevOps Engineer', 'dept' => 'Engineering'],
+//     ['id' => 6, 'name' => 'Jennifer Lee', 'position' => 'Marketing Lead', 'dept' => 'Marketing'],
+// ];
 
 // Generate additional employees to reach at least 50
 $departments = ['Engineering', 'Marketing', 'Sales', 'Support', 'Finance', 'HR', 'Design'];
 $positions = ['Developer', 'Analyst', 'Manager', 'Specialist', 'Coordinator', 'Associate'];
 
-for ($i = 7; $i <= 55; $i++) {
+for ($i = 1; $i <= 50; $i++) {
     $employees[] = [
         'id' => $i,
         'name' => "Employee $i",
@@ -65,7 +65,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <div class="mb-8">
     <div class="flex items-center gap-4 mb-2">
         <i data-lucide="dollar-sign" class="text-accent" style="width: 32px; height: 32px;"></i>
-        <h1 style="font-size: 2rem; font-weight: 500;">Payroll Dashboard</h1>
+        <h1 style="font-size: 2rem; font-weight: 500;">Simple Payroll</h1>
     </div>
     <p class="text-muted">Manage payroll for employees</p>
 </div>
@@ -74,10 +74,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <!-- Employee List Section -->
     <div class="bg-card border rounded-lg shadow-sm">
         <div class="p-4 border-bottom" style="border-bottom: 1px solid var(--border);">
-            <div style="position: relative;">
+            <!-- <div style="position: relative;">
                 <i data-lucide="search" class="text-muted" style="position: absolute; left: 12px; top: 10px; width: 18px; height: 18px;"></i>
                 <input type="text" placeholder="Search employees..." class="form-control" style="padding-left: 2.5rem;">
-            </div>
+            </div> -->
         </div>
         <div class="table-container" style="max-height: 500px; overflow-y: auto; box-shadow: none; border: none;">
             <table>
@@ -123,7 +123,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <form action="payroll.php" method="POST" id="payroll-form">
             <input type="hidden" name="employee_id" id="employee_id">
             
-            <div style="display: flex; flex-direction: column; gap: 1rem; mb-6:">
+            <div style="display: flex; flex-direction: column; gap: 1rem; margin-bottom: 1rem;">
                 <div>
                     <label>Hours Worked</label>
                     <input type="number" name="hours" class="form-control" placeholder="160" required step="0.5">
@@ -144,8 +144,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </form>
 
         <?php if ($payslip): ?>
-        <div class="border-top pt-6 mt-6" style="border-top: 1px solid var(--border);">
-            <h4 class="font-medium mb-4">Payslip Result</h4>
+        <div class="border-top pt-6 mt-4 mb-4" style="border-top: 1px solid var(--border);">
+            <h4 class="font-medium mb-4 mt-4">Payslip Result</h4>
             <div style="display: flex; flex-direction: column; gap: 0.75rem;">
                 <div class="flex justify-between items-center p-3 bg-muted rounded-lg">
                     <span class="text-muted text-sm">Employee</span>
