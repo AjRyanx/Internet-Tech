@@ -17,6 +17,7 @@ $avg_courses = $total_members > 0 ? number_format($total_course_count / $total_m
 ?>
 
 <div class="mb-8">
+
     <div class="flex items-center gap-4 mb-2">
         <i data-lucide="users" class="text-accent" style="width: 32px; height: 32px;"></i>
         <h1 style="font-size: 2rem; font-weight: 500;">Group Portal Dashboard</h1>
